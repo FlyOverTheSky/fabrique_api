@@ -1,0 +1,469 @@
+openapi: 3.0.3
+info:
+  title: Fabrique API
+  version: 1.0.0
+  description: Test api for fabrique
+paths:
+  /client/:
+    get:
+      operationId: client_list
+      tags:
+      - client
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Client'
+          description: ''
+    post:
+      operationId: client_create
+      tags:
+      - client
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Client'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Client'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Client'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Client'
+          description: ''
+  /client/{id}/:
+    get:
+      operationId: client_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this client.
+        required: true
+      tags:
+      - client
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Client'
+          description: ''
+    put:
+      operationId: client_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this client.
+        required: true
+      tags:
+      - client
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Client'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Client'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Client'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Client'
+          description: ''
+    patch:
+      operationId: client_partial_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this client.
+        required: true
+      tags:
+      - client
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedClient'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedClient'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedClient'
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Client'
+          description: ''
+    delete:
+      operationId: client_destroy
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this client.
+        required: true
+      tags:
+      - client
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '204':
+          description: No response body
+  /mailing/:
+    get:
+      operationId: mailing_list
+      tags:
+      - mailing
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Mailing'
+          description: ''
+    post:
+      operationId: mailing_create
+      tags:
+      - mailing
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Mailing'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Mailing'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Mailing'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Mailing'
+          description: ''
+  /mailing/{id}/:
+    get:
+      operationId: mailing_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this mailing.
+        required: true
+      tags:
+      - mailing
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Mailing'
+          description: ''
+    put:
+      operationId: mailing_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this mailing.
+        required: true
+      tags:
+      - mailing
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Mailing'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Mailing'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Mailing'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Mailing'
+          description: ''
+    patch:
+      operationId: mailing_partial_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this mailing.
+        required: true
+      tags:
+      - mailing
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedMailing'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedMailing'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedMailing'
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Mailing'
+          description: ''
+    delete:
+      operationId: mailing_destroy
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this mailing.
+        required: true
+      tags:
+      - mailing
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '204':
+          description: No response body
+  /mailing/{id}/get_mailing_stats/:
+    get:
+      operationId: mailing_get_mailing_stats_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this mailing.
+        required: true
+      tags:
+      - mailing
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Mailing'
+          description: ''
+components:
+  schemas:
+    Client:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        phone_number:
+          type: string
+          title: Номер телефона
+          pattern: ^\+?1?\d{11,11}$
+          maxLength: 11
+        mobile_operator_code:
+          type: string
+          title: Код мобильного оператора
+          maxLength: 3
+          minLength: 3
+        tag:
+          type: string
+          nullable: true
+          title: Метка
+          maxLength: 250
+        time_zone:
+          type: string
+          title: Временной пояс
+          maxLength: 30
+      required:
+      - id
+      - mobile_operator_code
+      - phone_number
+      - time_zone
+    Mailing:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        start_date_time:
+          type: string
+          format: date-time
+          title: Время и дата начала рассылки
+        end_date_time:
+          type: string
+          format: date-time
+          title: Время и дата окончания рассылки
+        text:
+          type: string
+          title: Текст рассылки
+        client_mobile_operator_code:
+          type: string
+          nullable: true
+          title: Код мобильного оператора для фильтрации
+          maxLength: 3
+        client_tag:
+          type: string
+          nullable: true
+          title: Метка клиентов для фильтрации
+          maxLength: 250
+        client_time_zone:
+          type: string
+          nullable: true
+          title: Временной пояс для фильтрации
+          maxLength: 30
+      required:
+      - end_date_time
+      - id
+      - start_date_time
+      - text
+    PatchedClient:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        phone_number:
+          type: string
+          title: Номер телефона
+          pattern: ^\+?1?\d{11,11}$
+          maxLength: 11
+        mobile_operator_code:
+          type: string
+          title: Код мобильного оператора
+          maxLength: 3
+          minLength: 3
+        tag:
+          type: string
+          nullable: true
+          title: Метка
+          maxLength: 250
+        time_zone:
+          type: string
+          title: Временной пояс
+          maxLength: 30
+    PatchedMailing:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        start_date_time:
+          type: string
+          format: date-time
+          title: Время и дата начала рассылки
+        end_date_time:
+          type: string
+          format: date-time
+          title: Время и дата окончания рассылки
+        text:
+          type: string
+          title: Текст рассылки
+        client_mobile_operator_code:
+          type: string
+          nullable: true
+          title: Код мобильного оператора для фильтрации
+          maxLength: 3
+        client_tag:
+          type: string
+          nullable: true
+          title: Метка клиентов для фильтрации
+          maxLength: 250
+        client_time_zone:
+          type: string
+          nullable: true
+          title: Временной пояс для фильтрации
+          maxLength: 30
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+    cookieAuth:
+      type: apiKey
+      in: cookie
+      name: sessionid
