@@ -55,9 +55,12 @@ celery -A backend beat -l info
 
 Redis
 терминал ubuntu
+```
 sudo apt install redis
+```
+```
 redis-server
-
+```
 Проверка подключеня:
 ```
 redis-cli
